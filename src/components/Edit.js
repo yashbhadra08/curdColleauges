@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { adddata, deletedata, updatedata } from "./context/ContextProvider";
+import { updatedata } from "./context/ContextProvider";
 
 const Edit = () => {
   const { setUPdata } = useContext(updatedata);
-  const { setDLTdata } = useContext(deletedata);
-  const { setUdata } = useContext(adddata);
+  // const { setDLTdata } = useContext(deletedata);
+  // const { setUdata } = useContext(adddata);
 
   const navigate = useNavigate("");
 
@@ -56,7 +56,7 @@ const Edit = () => {
   useEffect(() => {
     getdata();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setUdata, setUPdata, setDLTdata]);
+  }, []);
 
   const updateuser = async (e) => {
     e.preventDefault();

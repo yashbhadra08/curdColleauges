@@ -6,12 +6,12 @@ import CardContent from "@mui/material/CardContent";
 import userImg from "../Assets/user.png";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import "../App.css";
-import { adddata, deletedata, updatedata } from "./context/ContextProvider";
+import { deletedata } from "./context/ContextProvider";
 
 const Details = () => {
   const { setDLTdata } = useContext(deletedata);
-  const { setUdata } = useContext(adddata);
-  const { setUPdata } = useContext(updatedata);
+  // const { setUdata } = useContext(adddata);
+  // const { setUPdata } = useContext(updatedata);
 
   const [getuserdata, setUserdata] = useState([]);
   console.log(getuserdata);
@@ -43,7 +43,7 @@ const Details = () => {
   useEffect(() => {
     getdata();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setUdata, setUPdata, setDLTdata]);
+  }, []);
 
   const deleteuser = async (id) => {
     const res2 = await fetch(`/deleteuser/${id}`, {
