@@ -44,7 +44,7 @@ const Home = () => {
   useEffect(() => {
     getdata();
       // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setUdata, setUPdata, setDLTdata]);
 
   const deleteuser = async (id) => {
     const res2 = await fetch(`/deleteuser/${id}`, {
