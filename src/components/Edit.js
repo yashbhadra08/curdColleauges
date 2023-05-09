@@ -1,14 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavLink, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { updatedata } from "./context/ContextProvider";
 
-
-
 const Edit = () => {
-  // const [getuserdata, setUserdata] = useState([]);
-  // console.log(getuserdata);
-
-  const {updata, setUPdata} = useContext(updatedata)
+  const { setUPdata } = useContext(updatedata);
 
   const navigate = useNavigate("");
 
@@ -58,6 +53,7 @@ const Edit = () => {
 
   useEffect(() => {
     getdata();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const updateuser = async (e) => {
@@ -90,7 +86,7 @@ const Edit = () => {
       alert("fill the details");
     } else {
       alert("data updated");
-      setUPdata(data2)
+      setUPdata(data2);
       navigate("/");
     }
   };
@@ -206,7 +202,11 @@ const Edit = () => {
                 className="form-control"
               ></textarea>
             </div>
-            <button onClick={updateuser} type="submit" className="btn btn-primary">
+            <button
+              onClick={updateuser}
+              type="submit"
+              className="btn btn-primary"
+            >
               Submit
             </button>
           </div>

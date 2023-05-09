@@ -1,10 +1,8 @@
 import React, { useEffect, useState,useContext } from "react";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import CreateIcon from "@mui/icons-material/Create";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
 import userImg from "../Assets/user.png";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import '../App.css';
@@ -14,7 +12,7 @@ import { deletedata } from "./context/ContextProvider";
 
 const Details = () => {
   
-  const { dltdata, setDLTdata } = useContext(deletedata);
+  const { setDLTdata } = useContext(deletedata);
   
   const [getuserdata, setUserdata] = useState([]);
   console.log(getuserdata);
@@ -47,6 +45,7 @@ const Details = () => {
 
   useEffect(() => {
     getdata();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
@@ -92,7 +91,7 @@ const Details = () => {
         <div className="row">
           <div className="userApiImage">
             <div className="userImage">
-              <img src={userImg} alt="User Image" />
+              <img src={userImg} />
             </div>
           </div>
           <div className="userData">

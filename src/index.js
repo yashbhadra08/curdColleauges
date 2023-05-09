@@ -9,11 +9,11 @@ const rootElement = document.getElementById("root");
 
 render(
   <React.StrictMode>
-    <ContextProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <ContextProvider>
         <App />
-      </BrowserRouter>
-    </ContextProvider>
+      </ContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   rootElement
 );

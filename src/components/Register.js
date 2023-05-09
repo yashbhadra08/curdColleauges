@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { adddata } from "./context/ContextProvider";
 
 const Register = () => {
-  const { udata, setUdata } = useContext(adddata);
+  const { setUdata } = useContext(adddata);
 
   const navigate = useNavigate("");
 

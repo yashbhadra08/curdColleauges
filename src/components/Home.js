@@ -43,6 +43,7 @@ const Home = () => {
 
   useEffect(() => {
     getdata();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const deleteuser = async (id) => {
